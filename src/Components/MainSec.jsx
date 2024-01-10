@@ -20,6 +20,8 @@ import profilepic from "../Icons/profilepic.png";
 import dropdown from "../Icons/dropdown.png";
 import bell from "../Icons/bell.png";
 import { color } from "framer-motion";
+import BarChart from "./BarChart";
+import HorizontalBarCard from "./HorizontalBarCard";
 
 const MainSec = () => {
   const [selectedOption, setSelectedOption] = useState("Jan'22 - Dec'23");
@@ -28,10 +30,10 @@ const MainSec = () => {
   };
 
   return (
-    <Box bg='#EBEBEB'>
+    <Box bg="#EBEBEB">
       {/* topbar*/}
       <Box w="1010px" h="64px" p="20px">
-        <Flex justifyContent="space-between" alignItems="center" gap="12px">
+        <Flex justifyContent="space-between" alignItems="center">
           {/* category */}
           <Box w="127px" h="64px">
             <Flex alignItems="center" gap="12px">
@@ -71,28 +73,120 @@ const MainSec = () => {
                 borderRadius: "10px",
               }}
             >
-              <span style={{ display: "flex", alignItems: "center", fontWeight: '400'}}>
-                Show Time: <span style={{color: '#02AB6C'}}> &nbsp; {selectedOption} &nbsp; | &nbsp;</span>
+              <span
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontWeight: "400",
+                }}
+              >
+                Show Time:{" "}
+                <span style={{ color: "#02AB6C" }}>
+                  {" "}
+                  &nbsp; {selectedOption} &nbsp; | &nbsp;
+                </span>
                 <Image w="7.21px" h="4.6px" src={dropdown} />
               </span>
             </MenuButton>
             <MenuList bg="#02AB6C" color="#FFFFFF">
-              <MenuItem  bg="#02AB6C" onClick={() => handleSelectChange("Mar'23 - Apr'23")}>
+              <MenuItem
+                bg="#02AB6C"
+                onClick={() => handleSelectChange("Mar'23 - Apr'23")}
+              >
                 Mar'23 - Apr'23
               </MenuItem>
-              <MenuItem  bg="#02AB6C" onClick={() => handleSelectChange("Feb'23 - Aug'23")}>
+              <MenuItem
+                bg="#02AB6C"
+                onClick={() => handleSelectChange("Feb'23 - Aug'23")}
+              >
                 Feb'23 - Aug'23
               </MenuItem>
-              <MenuItem  bg="#02AB6C" onClick={() => handleSelectChange("Apr'23 - Jun'23")}>
+              <MenuItem
+                bg="#02AB6C"
+                onClick={() => handleSelectChange("Apr'23 - Jun'23")}
+              >
                 Apr'23 - Jun'23
               </MenuItem>
-              <MenuItem  bg="#02AB6C" onClick={() => handleSelectChange("Jan'23 - Nov'23")}>
+              <MenuItem
+                bg="#02AB6C"
+                onClick={() => handleSelectChange("Jan'23 - Nov'23")}
+              >
                 Jan'23 - Nov'23
               </MenuItem>
             </MenuList>
           </Menu>
         </Flex>
       </Box>
+
+      {/* Data Cards section */}
+
+      <Box>
+        <Flex justifyContent="space-around" gap="3px">
+          <HorizontalBarCard
+            heading="Current Year Emissions"
+            text="contribution to Scope3"
+            clr="red"
+            value="38999"
+          />
+          <HorizontalBarCard
+            heading="Revenue to emission ratio"
+            text="Revenue"
+            clr="orange"
+            value="38999"
+          />
+          <HorizontalBarCard
+            heading="Category-1"
+            text="contribution to Scope3"
+            clr="#3BB85E"
+            value="38999"
+          />
+          {/* Reached Suppliers */}
+          <Box
+            p="20px"
+            alignItems="center"
+            w="156px"
+            h="138px"
+            bg="#02AB6C"
+            textAlign="center"
+            borderRadius="12px"
+            background="linear-gradient(0deg, rgba(2, 171, 108, 0.67), rgba(2, 171, 108, 0.67)), linear-gradient(0deg, #EBEBEB, #EBEBEB)"
+          >
+            <Text
+              fontSize="14px"
+              fontWeight="400"
+              fontFamily="HelveticaNeue"
+              color="#fff"
+              lineHeight="18px"
+            >
+              Total number of reached suppliers
+            </Text>
+            <Text
+              fontFamily="HelveticaNeue"
+              fontSize="46px"
+              fontWeight="400"
+              lineHeight="54px"
+              color="#fff"
+            >
+              143
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+
+      {/* Charts Section */}
+      <Flex justifyContent='center' alignItems='center'>
+        <Box
+          w="905px"
+          h="521px"
+          borderRadius="12px"
+          border="1px"
+          mt="20px"
+          padding="20px"
+        >
+          <Text>Emission/Revenue</Text>
+          <BarChart />
+        </Box>
+      </Flex>
     </Box>
   );
 };

@@ -5,7 +5,7 @@ import MainSec from './Components/MainSec';
 
 function App() {
   return (
-    <Box>
+    <Box bg="#EBEBEB">
       <Flex>
         <LeftNav/>
         <MainSec/>
