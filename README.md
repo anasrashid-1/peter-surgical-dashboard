@@ -6,7 +6,7 @@
 
 This is a responsive and interactive dashboard built using React.js, Chakra UI, and Chart.js. It provides a visually appealing way to display data and insights.
 
-![Dashboard Preview](https://drive.google.com/file/d/1SJJvyRdJ08GtgwKxSEgaO1mFwwNnGidC/view)
+![dash](https://github.com/anasrashid-1/peter-surgical-dashboard/assets/125889610/cc4861c7-e27e-4ccc-9951-a341b7e1e561)
 
 ## Technologies Used
 
