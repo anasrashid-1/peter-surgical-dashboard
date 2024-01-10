@@ -16,7 +16,6 @@ This is a responsive and interactive dashboard built using React.js, Chakra UI, 
 
 ## Features
 
-- Responsive design
 - Interactive charts and graphs
 - Easily customizable components
 
