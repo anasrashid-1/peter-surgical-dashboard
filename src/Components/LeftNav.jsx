@@ -213,7 +213,7 @@ const LeftNav = () => {
       position="fixed"
       bottom="0"
       left="0"
-      width="249px"
+      width={{ base: "100%", md: "249px" }}
       height="48px"
       bg="#02AB6C"
       color="#FAFBFC"
@@ -221,6 +221,8 @@ const LeftNav = () => {
       fontSize="12px"
       fontWeight="400"
       zIndex="1000"
+
+      
     >
       <Flex justifyContent="center" alignItems="center" gap="6px" py="8px">
         <Text fontSize="12px">Powered by</Text>
