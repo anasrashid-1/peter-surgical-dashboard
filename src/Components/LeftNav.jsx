@@ -34,9 +34,9 @@ const LeftNav = () => {
 
   return (
     // Side Nav Container
-    <Box bg="#181818" w="249px" maxH="1049px" position='sticky'>
+    <Box bg="#181818" w="249px">
       {/* Logo Container */}
-      <Box borderY="1px" p="15px">
+      <Box borderY="1px" p="15px" position="sticky" top='0' zIndex='10' bg="#181818" >
         <Box boxSize="sm" w="219px" h="73px" p="13px 10px 13px 20px">
           <Image src={logo} w="128px" h="47px" />
         </Box>
@@ -204,6 +204,29 @@ const LeftNav = () => {
           </Button>
         </Center>
       </Box>
+
+
+
+      {/* section 5 */}
+ 
+     <Box
+      position="fixed"
+      bottom="0"
+      left="0"
+      width="249px"
+      height="48px"
+      bg="#02AB6C"
+      color="#FAFBFC"
+      fontFamily="HelveticaNeue"
+      fontSize="12px"
+      fontWeight="400"
+      zIndex="1000"
+    >
+      <Flex justifyContent="center" alignItems="center" gap="6px" py="8px">
+        <Text fontSize="12px">Powered by</Text>
+        <Text fontSize="22px">Longsight</Text>
+      </Flex>
+    </Box>
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import {
   Box,
   Image,
@@ -24,20 +24,38 @@ import BarChart from "./BarChart";
 import HorizontalBarCard from "./HorizontalBarCard";
 import TableData from "./TableData";
 
-import { db } from "../db";
+import { db as dataset1 } from "../db";
+import { db as dataset2 } from "../db2";
 import PieChart from "./PieChart";
 
 const MainSec = () => {
+
   const [selectedOption, setSelectedOption] = useState("Jan'22 - Dec'23");
   const handleSelectChange = (value) => {
     setSelectedOption(value);
   };
 
+  const [db, setDb]= useState([]);
+  useEffect(() => {
+    setDb(dataset1);
+    if (selectedOption === "Mar'23 - Apr'23") {
+      setDb(dataset1);
+    } else if (selectedOption === "Feb'23 - Aug'23") {
+      setDb(dataset2);
+    }
+  }, [db, selectedOption]);
+
+
+
+
+
+
   // console.log(data)
+
   return (
-    <Box bg="#EBEBEB">
+    <Box bg="#EBEBEB" ml='10px' >
       {/* topbar*/}
-      <Box w="1010px" h="64px" p="20px">
+      <Box h="64px" p="20px">
         <Flex justifyContent="space-between" alignItems="center">
           {/* category */}
           <Box w="127px" h="64px">
@@ -96,28 +114,17 @@ const MainSec = () => {
             <MenuList bg="#02AB6C" color="#FFFFFF">
               <MenuItem
                 bg="#02AB6C"
-                onClick={() => handleSelectChange("Mar'23 - Apr'23")}
+                onClick={() => {handleSelectChange("Mar'23 - Apr'23");}}
               >
                 Mar'23 - Apr'23
               </MenuItem>
               <MenuItem
                 bg="#02AB6C"
-                onClick={() => handleSelectChange("Feb'23 - Aug'23")}
+                onClick={() => {handleSelectChange("Feb'23 - Aug'23");}}
               >
-                Feb'23 - Aug'23
+               Feb'23 - Aug'23
               </MenuItem>
-              <MenuItem
-                bg="#02AB6C"
-                onClick={() => handleSelectChange("Apr'23 - Jun'23")}
-              >
-                Apr'23 - Jun'23
-              </MenuItem>
-              <MenuItem
-                bg="#02AB6C"
-                onClick={() => handleSelectChange("Jan'23 - Nov'23")}
-              >
-                Jan'23 - Nov'23
-              </MenuItem>
+            
             </MenuList>
           </Menu>
         </Flex>
@@ -126,12 +133,12 @@ const MainSec = () => {
       {/* Data Cards section */}
 
       <Box>
-        <Flex justifyContent="space-around" gap="3px">
+        <Flex justifyContent="space-around" gap="12px">
           <HorizontalBarCard
             heading="Current Year Emissions"
             text="contribution to Scope3"
             clr="red"
-            value="38999"
+            value="38999 COe" 
           />
           <HorizontalBarCard
             heading="Revenue to emission ratio"
@@ -194,7 +201,7 @@ const MainSec = () => {
           </Box>
         </Flex>
 
-        <Box w="905px">
+        <Box w="905px" ml='26px'>
           <Flex
             justifyContent="center"
             gap="12px"

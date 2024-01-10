@@ -6,7 +6,7 @@ const DataTable = ({ db }) => {
 
   return (
     <Box>
-      <Table variant="striped" colorScheme="teal">
+      <Table variant="striped" colorScheme="teal" w='500px'>
         <TableCaption>Monthly Data</TableCaption>
         <Thead>
           <Tr>
