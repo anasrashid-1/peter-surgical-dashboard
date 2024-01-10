@@ -2,17 +2,12 @@ import { React, useEffect, useState } from "react";
 import {
   Box,
   Image,
-  VStack,
   Text,
-  Select,
   Flex,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  Button,
-  Center,
-  useDisclosure,
 } from "@chakra-ui/react";
 
 import category from "../Icons/category.png";

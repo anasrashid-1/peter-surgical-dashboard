@@ -122,6 +122,8 @@ const LeftNav = () => {
                   <MenuItem bg="#02AB6C">Catergory 4</MenuItem>
                 </MenuList>
               </Menu>
+              
+
               {/* <Image src={vector} w="14px" h="8px"  onClick={isOpenMenu1 ? onCloseMenu1 : onOpenMenu1} cursor='pointer'/> */}
             </Flex>
           </Box>
