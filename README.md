@@ -1,3 +1,34 @@
+# React Dashboard with Chakra UI and Chart.js
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+## Overview
+
+This is a responsive and interactive dashboard built using React.js, Chakra UI, and Chart.js. It provides a visually appealing way to display data and insights.
+
+![Dashboard Preview](https://drive.google.com/file/d/1SJJvyRdJ08GtgwKxSEgaO1mFwwNnGidC/view)
+
+## Technologies Used
+
+- [React.js](https://reactjs.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Chart.js](https://www.chartjs.org/)
+
+## Features
+
+- Responsive design
+- Interactive charts and graphs
+- Easily customizable components
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
