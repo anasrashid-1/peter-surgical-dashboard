@@ -34,7 +34,7 @@ const LeftNav = () => {
 
   return (
     // Side Nav Container
-    <Box bg="#181818" w="249px" maxH="1049px">
+    <Box bg="#181818" w="249px" maxH="1049px" position='sticky'>
       {/* Logo Container */}
       <Box borderY="1px" p="15px">
         <Box boxSize="sm" w="219px" h="73px" p="13px 10px 13px 20px">

@@ -22,6 +22,10 @@ import bell from "../Icons/bell.png";
 import { color } from "framer-motion";
 import BarChart from "./BarChart";
 import HorizontalBarCard from "./HorizontalBarCard";
+import TableData from "./TableData";
+
+import { db } from "../db";
+import PieChart from "./PieChart";
 
 const MainSec = () => {
   const [selectedOption, setSelectedOption] = useState("Jan'22 - Dec'23");
@@ -29,6 +33,7 @@ const MainSec = () => {
     setSelectedOption(value);
   };
 
+  // console.log(data)
   return (
     <Box bg="#EBEBEB">
       {/* topbar*/}
@@ -174,19 +179,53 @@ const MainSec = () => {
       </Box>
 
       {/* Charts Section */}
-      <Flex justifyContent='center' alignItems='center'>
-        <Box
-          w="905px"
-          h="521px"
-          borderRadius="12px"
-          border="1px"
-          mt="20px"
-          padding="20px"
-        >
-          <Text>Emission/Revenue</Text>
-          <BarChart />
+      <Box>
+        <Flex justifyContent="center" alignItems="center">
+          <Box
+            w="905px"
+            h="521px"
+            borderRadius="12px"
+            border="1px"
+            mt="20px"
+            padding="20px"
+          >
+            <Text>Emission/Revenue</Text>
+            <BarChart db={db} />
+          </Box>
+        </Flex>
+
+        <Box w="905px">
+          <Flex
+            justifyContent="center"
+            gap="12px"
+            alignItems="center"
+            w="905px"
+          >
+            {/* piechart */}
+            <Box
+              borderRadius="12px"
+              border="1px"
+              mt="20px"
+              padding="20px"
+              h="471px"
+            >
+              <Text>Suppliers Revenue</Text>
+              <PieChart db={db} />
+            </Box>
+
+            {/* Table */}
+            <Box
+              borderRadius="12px"
+              border="1px solid grey"
+              mt="20px"
+              padding="20px"
+              h="471px"
+            >
+              <TableData db={db} />
+            </Box>
+          </Flex>
         </Box>
-      </Flex>
+      </Box>
     </Box>
   );
 };
