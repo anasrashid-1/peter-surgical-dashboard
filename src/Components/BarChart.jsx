@@ -32,15 +32,14 @@ const BarChart = ({ db }) => {
     ],
     datasets: [
     
-      {
-        type: "line",
-        label: "RE-2023",
-        data: db.filter((item) => item.year === 2023).map((item) => item.revenue),
-        fill: false,
-        borderColor: "orange",
-        borderWidth: 2,
-        pointRadius: 5,
-      },
+      // {
+      //   type: "line",
+      //   label: "RE-2023",
+      //   data: db.filter((item) => item.year === 2023).map((item) => item.revenue),
+      //   borderColor: "orange",
+      //   borderWidth: 2,
+      //   pointRadius: 5,
+      // },
       {
         type: "bar",
         label: "Emissions-2022",
