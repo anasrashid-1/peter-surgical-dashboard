@@ -9,7 +9,7 @@ import {
   PointElement,
   Tooltip,
   Legend,
-} from "chart.js";
+} from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
 
 ChartJs.register(
@@ -32,14 +32,14 @@ const BarChart = ({ db }) => {
     ],
     datasets: [
     
-      // {
-      //   type: "line",
-      //   label: "RE-2023",
-      //   data: db.filter((item) => item.year === 2023).map((item) => item.revenue),
-      //   borderColor: "orange",
-      //   borderWidth: 2,
-      //   pointRadius: 5,
-      // },
+      {
+        type: "line",
+        label: "RE-2023",
+        data: db.filter((item) => item.year === 2023).map((item) => item.revenue),
+        borderColor: "orange",
+        borderWidth: 2,
+        pointRadius: 5,
+      },
       {
         type: "bar",
         label: "Emissions-2022",
